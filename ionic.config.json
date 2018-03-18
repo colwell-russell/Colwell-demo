@@ -1,0 +1,8 @@
+{
+  "name": "colwell-demo",
+  "app_id": "c416b4fe",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
