@@ -8,13 +8,20 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
 
   <button ion-button secondary menuToggle>Toggle Menu</button>
   <button ion-button secondary (click)="showChampions()">Get Champions</button>
   <button ion-button secondary (click)="showItems()">Get Items</button>
+
+  <div *ngIf="champions">
+    <ion-grid *ngFor="let champ of champions | jsontoarray; index as i;">
+      <ion-row *ngIf="(i + 1) % 3 == 0">
+        <ion-col>
+          {{i + 1}}
+          <img src="{{ championProvider.championImageUrl + champions[champ].image.full}}"/>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
 </ion-content>

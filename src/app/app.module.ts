@@ -10,6 +10,8 @@ import { ListPage } from '../pages/list/list';
 import { LoLChampionsProvider } from '../providers/LoLChampionsProvider/LoLChampionsProvider';
 import { LoLItemsProvider } from '../providers/LoLItemsProvider/LoLItemsProvider';
 
+import { JsonToArray } from '../Pipes/JsonToArray/JsonToArray';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -25,6 +27,7 @@ export function itemsProviderFactory(itemsProvider: LoLItemsProvider) {
   declarations: [
     MyApp,
     HomePage,
+    JsonToArray,
     ListPage
   ],
   imports: [

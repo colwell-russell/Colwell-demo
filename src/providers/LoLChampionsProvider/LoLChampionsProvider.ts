@@ -10,6 +10,7 @@ import {Observable} from "rxjs";
 export class LoLChampionsProvider {
 
   private championsUrl: string = "http://ddragon.leagueoflegends.com/cdn/8.5.1/data/en_US/champion.json";
+  public championImageUrl: string = "http://ddragon.leagueoflegends.com/cdn/8.5.1/img/champion/";
   private champions: any;
 
   constructor(private http: HttpClient){
