@@ -1,11 +1,35 @@
 page-home {
+  ion-row {
+    text-align: center;
+  }
+
+  ion-col {
+    height: 125px;
+    text-align: center;
+  }
+
   img {
     height: 100px;
     width: 100px;
-    opacity: 0.7;
   }
 
-  ion-row {
-    text-align: center;
+  ion-card {
+    width: 33%;
+  }
+
+  .pic-div {
+    float: left;
+    padding-right: 10px;
+    height: 100px;
+    width: 100px;
+  }
+
+  ion-col .card-title {
+    top:65%;
+    position: absolute;
+    font-size: 1.0em;
+    width: 100%;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
   }
 }

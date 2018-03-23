@@ -3,22 +3,29 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Champions</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-  <div *ngIf="champions">
-    <ion-grid>
-      <ion-row *ngFor="let champ of championKeys | jsontoarray; index as i;">
-        <ion-col *ngIf="(i + 1) % 3 == 0">
-          <img src="{{ championProvider.championImageUrl + champions[championKeys[i]].image.full}}"/>
-          <img src="{{ championProvider.championImageUrl + champions[championKeys[i +1]].image.full}}"/>
-          <img src="{{ championProvider.championImageUrl + champions[championKeys[i +2]].image.full}}"/>
+    <ion-grid *ngIf="champions">
+      <div *ngFor="let champ of championKeys | jsontoarray; index as i;">
+      <ion-row *ngIf="(i + 1) % 3 == 0">
+        <ion-col>
+            <img src="{{ championProvider.championImageUrl + champions[championKeys[i]].image.full}}"/>
+            <div class="card-title">{{champions[championKeys[i]].name}}</div>
+        </ion-col>
+        <ion-col>
+            <img src="{{ championProvider.championImageUrl + champions[championKeys[i + 1]].image.full}}"/>
+            <div class="card-title">{{champions[championKeys[i + 1]].name}}</div>
+        </ion-col>
+        <ion-col>
+          <img src="{{ championProvider.championImageUrl + champions[championKeys[i + 2]].image.full}}"/>
+          <div class="card-title">{{champions[championKeys[i + 2]].name}}</div>
         </ion-col>
       </ion-row>
+      </div>
     </ion-grid>
-  </div>
 
 </ion-content>

@@ -33,7 +33,7 @@ export class HomePage implements OnInit{
     console.log(this.itemsProvider.getItems());
   }
 
-  transform(value, args: string[]): any {
+  transform(value): any {
     let keys = [];
 
     for (let key in value) {
