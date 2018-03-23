@@ -12,6 +12,7 @@ import { JsonToArray } from '../../Pipes/JsonToArray/JsonToArray';
 export class HomePage implements OnInit{
 
   champions: any
+  championKeys: any;
 
   constructor(public navCtrl: NavController, public championProvider: LoLChampionsProvider, public itemsProvider: LoLItemsProvider) {
 
@@ -20,6 +21,7 @@ export class HomePage implements OnInit{
   ngOnInit(){
     this.championProvider.getChampionData().subscribe(data => {
       this.champions = data['data'];
+      this.championKeys = this.transform(this.champions);
     });
   }
 
@@ -31,4 +33,12 @@ export class HomePage implements OnInit{
     console.log(this.itemsProvider.getItems());
   }
 
+  transform(value, args: string[]): any {
+    let keys = [];
+
+    for (let key in value) {
+      keys.push(key);
+    }
+    return keys;
+  }
 }
