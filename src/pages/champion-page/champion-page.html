@@ -4,8 +4,66 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="champion-page">
 
-  {{ champion.name }}
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img src="{{ championProvider.championImageUrl + champion.image.full}}"/>
+      </ion-col>
+      <ion-col *ngIf="champion.info">
+        <ion-label>Difficulty: {{ champion.info.difficulty}}</ion-label>
+        <ion-label>Attack: {{ champion.info.attack}}</ion-label>
+        <ion-label>Defense: {{ champion.info.defense}}</ion-label>
+        <ion-label>Magic: {{ champion.info.magic}}</ion-label>
+      </ion-col>
+      <ion-col *ngIf="champion.stats">
+        <ion-label>Attack Range: {{ champion.stats.attackrange}} </ion-label>
+        <ion-label>Attack Range: {{ champion.stats.movespeed}} </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="champion.stats">
+      <ion-col>
+        <ion-label>Armor: {{ champion.stats.armor}}</ion-label>
+        <ion-label>Attack Dmg: {{ champion.stats.attackdamage}}</ion-label>
+        <ion-label>Attack Spd: {{ champion.stats.attackspeedoffset}}</ion-label>
+        <ion-label>Crit: {{ champion.stats.crit}}</ion-label>
+        <ion-label>HP: {{ champion.stats.hp}}</ion-label>
+        <ion-label>HP Regen: {{ champion.stats.hpregen}}</ion-label>
+        <ion-label>MP: {{ champion.stats.mp}}</ion-label>
+        <ion-label>MP Regen: {{ champion.stats.mpregen}}</ion-label>
+        <ion-label>Spell Blk: {{ champion.stats.spellblock}}</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Armor per Level: {{ champion.stats.armorperlevel}} </ion-label>
+        <ion-label>Attack Dmg per Level: {{ champion.stats.attackdamageperlevel}}</ion-label>
+        <ion-label>Attack Spd per Level: {{ champion.stats.attackspeedperlevel}}</ion-label>
+        <ion-label>Crit per Level: {{ champion.stats.critperlevel}}</ion-label>
+        <ion-label>HP per Level: {{ champion.stats.hpperlevel}}</ion-label>
+        <ion-label>HP Regen per Level: {{ champion.stats.hpregenperlevel}}</ion-label>
+        <ion-label>MP per Level: {{ champion.stats.mpperlevel}}</ion-label>
+        <ion-label>MP Regen per Level: {{ champion.stats.mpregenperlevel}}</ion-label>
+        <ion-label>Spell Blk per Level: {{ champion.stats.spellblockperlevel}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-list *ngIf="champion.spells">
+        <ion-item (click)="openSpellPage(champion.passive)">
+          <ion-thumbnail item-start>
+            <img src="{{ championProvider.passiveAbilityImageUrl + champion.passive.image.full }}"/>
+          </ion-thumbnail>
+          <ion-label>{{ champion.passive.name }}</ion-label>
+          <ion-icon name="arrow-forward" item-end></ion-icon>
+        </ion-item>
+        <ion-item *ngFor="let spell of champion.spells" (click)="openSpellPage(spell)">
+          <ion-thumbnail item-start>
+            <img src="{{ championProvider.summonerSpellImageUrl + spell.image.full }}"/>
+          </ion-thumbnail>
+          <ion-label>{{ spell.name }}</ion-label>
+          <ion-icon name="arrow-forward" item-end></ion-icon>
+        </ion-item>
+      </ion-list>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

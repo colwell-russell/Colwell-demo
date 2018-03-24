@@ -3,22 +3,33 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { LoLChampionsProvider } from '../../providers/LoLChampionsProvider/LoLChampionsProvider';
 
 @Component({
   selector: 'champion-page',
-  templateUrl: 'champion-page.html'
+  templateUrl: 'champion-page.html',
+  providers:[LoLChampionsProvider]
 })
 export class ChampionPage implements OnInit {
 
   champion: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public championProvider: LoLChampionsProvider) {
     this.champion = navParams.get('champion');
+    console.log(this.champion);
+
+    championProvider.getChampion(this.champion.id).subscribe(data => {
+      this.champion = data['data'][this.champion.id];
+      console.log(this.champion);
+    })
   }
 
   ngOnInit() {
 
   }
 
+  openSpellPage(spell: any){
+    console.log(spell);
+  }
 }
 

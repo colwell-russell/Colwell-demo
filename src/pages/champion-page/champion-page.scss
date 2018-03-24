@@ -1,4 +1,19 @@
 champion-page {
+  img {
+    height: 100px;
+    width: 100px;
+  }
 
+  ion-list {
+    width: 100%;
+  }
 
+  ion-label {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  .label-ios {
+    margin: 0px 0px 5px 0px;
+  }
 }

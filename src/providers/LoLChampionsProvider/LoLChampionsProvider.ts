@@ -10,6 +10,9 @@ import {Observable} from "rxjs";
 export class LoLChampionsProvider {
 
   private championsUrl: string = "http://ddragon.leagueoflegends.com/cdn/8.5.1/data/en_US/champion.json";
+  private specificChampionUrl: string = "http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion/";
+  public passiveAbilityImageUrl: string = "http://ddragon.leagueoflegends.com/cdn/6.24.1/img/passive/";
+  public summonerSpellImageUrl: string = "http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/";
   public championImageUrl: string = "http://ddragon.leagueoflegends.com/cdn/8.5.1/img/champion/";
   private champions: any;
 
@@ -33,5 +36,9 @@ export class LoLChampionsProvider {
 
   getChampions(){
     return this.champions;
+  }
+
+  getChampion(champ: string) {
+    return this.http.get(this.specificChampionUrl + champ + ".json");
   }
 }
