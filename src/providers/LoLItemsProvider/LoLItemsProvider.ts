@@ -25,7 +25,6 @@ export class LoLItemsProvider {
       this.getItemData()
         .subscribe(response => {
           this.items = response['data'];
-          console.log(response);
           resolve();
         }, err => resolve(err))
     });

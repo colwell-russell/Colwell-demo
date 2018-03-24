@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LoLChampionsProvider } from '../../providers/LoLChampionsProvider/LoLChampionsProvider';
 import { LoLItemsProvider } from '../../providers/LoLItemsProvider/LoLItemsProvider';
-import { JsonToArray } from '../../Pipes/JsonToArray/JsonToArray';
+
+import { ChampionPage } from '../champion-page/champion-page';
 
 @Component({
   selector: 'page-home',
@@ -31,6 +32,12 @@ export class HomePage implements OnInit{
 
   showItems(){
     console.log(this.itemsProvider.getItems());
+  }
+
+  openChampionPage(champ: string){
+    this.navCtrl.push(ChampionPage, {
+      champion: champ
+    });
   }
 
   transform(value): any {
