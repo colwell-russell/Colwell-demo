@@ -7,6 +7,7 @@ import { MyApp } from './app.component';
 import { ChampionPage } from '../pages/champion-page/champion-page';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { SpellPage } from '../pages/spell-page/spell-page';
 
 import { LoLChampionsProvider } from '../providers/LoLChampionsProvider/LoLChampionsProvider';
 import { LoLItemsProvider } from '../providers/LoLItemsProvider/LoLItemsProvider';
@@ -30,7 +31,8 @@ export function itemsProviderFactory(itemsProvider: LoLItemsProvider) {
     ChampionPage,
     HomePage,
     JsonToArray,
-    ListPage
+    ListPage,
+    SpellPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ export function itemsProviderFactory(itemsProvider: LoLItemsProvider) {
     MyApp,
     ChampionPage,
     HomePage,
-    ListPage
+    ListPage,
+    SpellPage
   ],
   providers: [
     LoLChampionsProvider,

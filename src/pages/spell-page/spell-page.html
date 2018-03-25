@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ spell.name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="spell-page">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <img src="{{ championProvider.summonerSpellImageUrl + spell.image.full}}"/>
+      </ion-col>
+      <ion-col col-8>
+        <ion-label>Cost: {{ spell.cost }}</ion-label>
+        <ion-label>Cooldown: {{ spell.cooldown}}</ion-label>
+        <ion-label>Range: {{ spell.range }}</ion-label>
+        <ion-label>Damage: {{ spell.effect[1] }}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-card>
+        <ion-card-header>Description</ion-card-header>
+        <ion-card-content>
+          {{ spell.description }}
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    <ion-row>
+      <ion-card>
+        <ion-card-header>Tip</ion-card-header>
+        <ion-card-content>
+          {{ processTip(spell.tooltip) }}
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

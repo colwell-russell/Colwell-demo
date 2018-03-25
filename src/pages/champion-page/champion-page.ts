@@ -4,6 +4,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { LoLChampionsProvider } from '../../providers/LoLChampionsProvider/LoLChampionsProvider';
+import { SpellPage } from '../spell-page/spell-page';
 
 @Component({
   selector: 'champion-page',
@@ -29,7 +30,9 @@ export class ChampionPage implements OnInit {
   }
 
   openSpellPage(spell: any){
-    console.log(spell);
+    this.navCtrl.push(SpellPage, {
+      spell: spell
+    });
   }
 }
 
