@@ -33,8 +33,8 @@ export class SpellPage implements OnInit {
 
     //Replace vars
     for(let i in this.spell.vars){
-      var pattern = "{{ " + this.spell.vars[i].key + " }}";
-      tip = tip.replace(pattern, this.spell.vars[i].coeff);
+      var pattern2 = "{{ " + this.spell.vars[i].key + " }}";
+      tip = tip.replace(pattern2, this.spell.vars[i].coeff);
     }
 
     //Replace Tags

@@ -12,15 +12,15 @@
     <ion-grid *ngIf="champions">
       <div *ngFor="let champ of championKeys | jsontoarray; index as i;">
       <ion-row *ngIf="(i + 1) % 3 == 0">
-        <ion-col (click)="openChampionPage(champions[championKeys[i]])">
+        <ion-col *ngIf="champions[championKeys[i]]" (click)="openChampionPage(champions[championKeys[i]])">
             <img src="{{ championProvider.championImageUrl + champions[championKeys[i]].image.full}}"/>
             <div class="card-title">{{champions[championKeys[i]].name}}</div>
         </ion-col>
-        <ion-col (click)="openChampionPage(champions[championKeys[i + 1]])">
+        <ion-col *ngIf="champions[championKeys[i + 1]]" (click)="openChampionPage(champions[championKeys[i + 1]])">
             <img src="{{ championProvider.championImageUrl + champions[championKeys[i + 1]].image.full}}"/>
             <div class="card-title">{{champions[championKeys[i + 1]].name}}</div>
         </ion-col>
-        <ion-col (click)="openChampionPage(champions[championKeys[i + 2]])">
+        <ion-col *ngIf="champions[championKeys[i + 2]]" (click)="openChampionPage(champions[championKeys[i + 2]])">
           <img src="{{ championProvider.championImageUrl + champions[championKeys[i + 2]].image.full}}"/>
           <div class="card-title">{{champions[championKeys[i + 2]].name}}</div>
         </ion-col>

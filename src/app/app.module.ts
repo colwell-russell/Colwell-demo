@@ -6,6 +6,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { ChampionPage } from '../pages/champion-page/champion-page';
 import { HomePage } from '../pages/home/home';
+import { ItemListPage } from '../pages/item-list-page/item-list-page';
 import { ListPage } from '../pages/list/list';
 import { SpellPage } from '../pages/spell-page/spell-page';
 
@@ -30,6 +31,7 @@ export function itemsProviderFactory(itemsProvider: LoLItemsProvider) {
     MyApp,
     ChampionPage,
     HomePage,
+    ItemListPage,
     JsonToArray,
     ListPage,
     SpellPage
@@ -44,6 +46,7 @@ export function itemsProviderFactory(itemsProvider: LoLItemsProvider) {
     MyApp,
     ChampionPage,
     HomePage,
+    ItemListPage,
     ListPage,
     SpellPage
   ],

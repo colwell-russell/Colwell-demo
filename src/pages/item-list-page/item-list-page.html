@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Items</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid *ngIf="items">
+    <div *ngFor="let item of items | jsontoarray; index as i;">
+      <ion-row *ngIf="(i + 1) % 3 == 0">
+        <ion-col *ngIf="items[itemKeys[i]]" (click)="openItemPage(items[itemKeys[i]])">
+          <img src="{{ itemsProvider.itemImageUrl + items[itemKeys[i]].image.full}}"/>
+          <div class="card-title">{{items[itemKeys[i]].name}}</div>
+        </ion-col>
+        <ion-col *ngIf="items[itemKeys[i + 1]]" (click)="openItemPage(items[itemKeys[i + 1]])">
+          <img src="{{ itemsProvider.itemImageUrl + items[itemKeys[i + 1]].image.full}}"/>
+          <div class="card-title">{{items[itemKeys[i + 1]].name}}</div>
+        </ion-col>
+        <ion-col *ngIf="items[itemKeys[i + 2]]" (click)="openItemPage(items[itemKeys[i + 2]])">
+          <img src="{{ itemsProvider.itemImageUrl + items[itemKeys[i + 2]].image.full}}"/>
+          <div class="card-title">{{items[itemKeys[i + 2]].name}}</div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+
+</ion-content>

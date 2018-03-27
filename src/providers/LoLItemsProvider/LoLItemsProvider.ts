@@ -10,6 +10,7 @@ import {Observable} from "rxjs";
 export class LoLItemsProvider {
 
   private itemsUrl: string = "http://ddragon.leagueoflegends.com/cdn/8.5.1/data/en_US/item.json";
+  public itemImageUrl: string = "http://ddragon.leagueoflegends.com/cdn/8.5.1/img/item/";
   private items: any;
 
   constructor(private http: HttpClient){

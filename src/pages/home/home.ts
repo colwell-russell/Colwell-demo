@@ -26,14 +26,6 @@ export class HomePage implements OnInit{
     });
   }
 
-  showChampions(){
-    console.log(this.champions);
-  }
-
-  showItems(){
-    console.log(this.itemsProvider.getItems());
-  }
-
   openChampionPage(champ: string){
     this.navCtrl.push(ChampionPage, {
       champion: champ
