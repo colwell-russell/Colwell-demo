@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LoLItemsProvider } from '../../providers/LoLItemsProvider/LoLItemsProvider';
 
+import { ItemPage } from '../../pages/item-page/item-page';
+
 @Component({
   selector: 'item-list-page',
   templateUrl: 'item-list-page.html',
@@ -24,7 +26,10 @@ export class ItemListPage implements OnInit{
   }
 
   openItemPage(item: string){
-    console.log(item)
+    this.navCtrl.push(ItemPage, {
+      item: item,
+      items: this.items
+    });
   }
 
   transform(value): any {

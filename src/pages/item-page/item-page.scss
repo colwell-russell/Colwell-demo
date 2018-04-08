@@ -1,0 +1,31 @@
+item-page {
+  img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .mini-img {
+    height: 35px;
+    width: 35px;
+    padding: 2px 2px 2px 2px;
+  }
+
+  .center-row {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  ion-list {
+    width: 100%;
+  }
+
+  ion-label {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  .label-ios {
+    margin: 0px 0px 5px 0px;
+  }
+}
