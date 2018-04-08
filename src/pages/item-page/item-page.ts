@@ -33,4 +33,20 @@ export class ItemPage implements OnInit {
     });
   }
 
+  replaceTags(description: any) {
+
+    //Replace NewLines
+    if(description != undefined){
+      description = description.replace(/<br>/g, "\n");
+    }
+
+    console.log(description);
+    //Replace Tags
+    if(description != undefined){
+      description = description.replace(/<.+?>/g, "");
+    }
+
+    return description;
+  }
+
 }
