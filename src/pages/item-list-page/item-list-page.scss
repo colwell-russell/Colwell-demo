@@ -1,7 +1,19 @@
 item-list-page {
+
+  ion-row {
+    text-align: center;
+    font-size: small;
+  }
+
+  ion-col {
+    height: 125px;
+    text-align: center;
+  }
+
   img {
     height: 100px;
     width: 100px;
+    opacity: .9;
   }
 
   ion-list {
@@ -15,5 +27,14 @@ item-list-page {
 
   .label-ios {
     margin: 0px 0px 5px 0px;
+  }
+
+  ion-col .card-title {
+    top:65%;
+    position: absolute;
+    font-size: 1.0em;
+    width: 100%;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
   }
 }

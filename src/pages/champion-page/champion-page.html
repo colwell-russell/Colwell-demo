@@ -48,7 +48,7 @@
     </ion-row>
     <ion-row>
       <ion-list *ngIf="champion.spells">
-        <ion-item (click)="openSpellPage(champion.passive)">
+        <ion-item (click)="openSpellPage(champion.passive, true)">
           <ion-thumbnail item-start>
             <img src="{{ championProvider.passiveAbilityImageUrl + champion.passive.image.full }}"/>
           </ion-thumbnail>

@@ -29,9 +29,10 @@ export class ChampionPage implements OnInit {
 
   }
 
-  openSpellPage(spell: any){
+  openSpellPage(spell: any, isPassive: string){
     this.navCtrl.push(SpellPage, {
-      spell: spell
+      spell: spell,
+      isPassive: isPassive
     });
   }
 }

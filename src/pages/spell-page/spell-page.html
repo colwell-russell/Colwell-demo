@@ -9,9 +9,10 @@
   <ion-grid>
     <ion-row>
       <ion-col col-4>
-        <img src="{{ championProvider.summonerSpellImageUrl + spell.image.full}}"/>
+        <img *ngIf="isPassive === undefined" src="{{ championProvider.summonerSpellImageUrl + spell.image.full}}"/>
+        <img *ngIf="isPassive !== undefined" src="{{ championProvider.passiveAbilityImageUrl + spell.image.full}}"/>
       </ion-col>
-      <ion-col col-8>
+      <ion-col col-8 *ngIf="spell.effect">
         <ion-label>Cost: {{ spell.cost }}</ion-label>
         <ion-label>Cooldown: {{ spell.cooldown}}</ion-label>
         <ion-label>Range: {{ spell.range }}</ion-label>

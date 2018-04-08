@@ -13,10 +13,12 @@ import { LoLChampionsProvider } from '../../providers/LoLChampionsProvider/LoLCh
 export class SpellPage implements OnInit {
 
   spell: any;
+  isPassive: false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public championProvider: LoLChampionsProvider) {
     this.spell = navParams.get('spell');
-    console.log(this.spell);
+    this.isPassive = navParams.get('isPassive');
+    console.log(this.isPassive);
   }
 
   ngOnInit() {
@@ -26,9 +28,11 @@ export class SpellPage implements OnInit {
   processTip(tip: string){
 
     //Replace effects
-    for(let i = 1; i < this.spell.effect.length; i++){
-      var pattern = "{{ e" + i + " }}";
-      tip = tip.replace(pattern, this.spell.effect[i][0]);
+    if(this.spell.effect){
+      for(let i = 1; i < this.spell.effect.length; i++){
+        var pattern = "{{ e" + i + " }}";
+        tip = tip.replace(pattern, this.spell.effect[i][0]);
+      }
     }
 
     //Replace vars
@@ -38,7 +42,9 @@ export class SpellPage implements OnInit {
     }
 
     //Replace Tags
-    tip = tip.replace(/<.+?>/g, "");
+    if(tip != undefined){
+      tip = tip.replace(/<.+?>/g, "");
+    }
     return tip;
   }
 
