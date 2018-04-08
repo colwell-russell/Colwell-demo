@@ -1,7 +1,7 @@
 /**
  * Created by russellcolwell on 3/18/18.
  */
-
+import { ConfigProvider } from '../config/ConfigProvider'
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from "rxjs";
@@ -9,14 +9,14 @@ import {Observable} from "rxjs";
 @Injectable()
 export class LoLChampionsProvider {
 
-  private championsUrl: string = "http://ddragon.leagueoflegends.com/cdn/8.5.1/data/en_US/champion.json";
-  private specificChampionUrl: string = "http://ddragon.leagueoflegends.com/cdn/8.5.1/data/en_US/champion/";
-  public passiveAbilityImageUrl: string = "http://ddragon.leagueoflegends.com/cdn/8.5.1/img/passive/";
-  public summonerSpellImageUrl: string = "http://ddragon.leagueoflegends.com/cdn/8.5.1/img/spell/";
-  public championImageUrl: string = "http://ddragon.leagueoflegends.com/cdn/8.5.1/img/champion/";
+  private championsUrl: string = "http://ddragon.leagueoflegends.com/cdn/" + this.config.lol_version + "/data/en_US/champion.json";
+  private specificChampionUrl: string = "http://ddragon.leagueoflegends.com/cdn/" + this.config.lol_version + "/data/en_US/champion/";
+  public passiveAbilityImageUrl: string = "http://ddragon.leagueoflegends.com/cdn/" + this.config.lol_version + "/img/passive/";
+  public summonerSpellImageUrl: string = "http://ddragon.leagueoflegends.com/cdn/" + this.config.lol_version + "/img/spell/";
+  public championImageUrl: string = "http://ddragon.leagueoflegends.com/cdn/" + this.config.lol_version + "/img/champion/";
   private champions: any;
 
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient, private config: ConfigProvider){
     this.load();
   }
 

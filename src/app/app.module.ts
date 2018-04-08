@@ -10,6 +10,7 @@ import { ItemListPage } from '../pages/item-list-page/item-list-page';
 import { ListPage } from '../pages/list/list';
 import { SpellPage } from '../pages/spell-page/spell-page';
 
+import { ConfigProvider } from '../providers/config/ConfigProvider';
 import { LoLChampionsProvider } from '../providers/LoLChampionsProvider/LoLChampionsProvider';
 import { LoLItemsProvider } from '../providers/LoLItemsProvider/LoLItemsProvider';
 
@@ -51,6 +52,7 @@ export function itemsProviderFactory(itemsProvider: LoLItemsProvider) {
     SpellPage
   ],
   providers: [
+    ConfigProvider,
     LoLChampionsProvider,
     LoLItemsProvider,
     StatusBar,
