@@ -37,7 +37,9 @@
       <img class="mini-img center-row" src="{{ itemsProvider.itemImageUrl + item.image.full}}"/>
     </ion-row>
     <ion-row *ngIf="item.from">
-      <img *ngFor="let rfmItem of item.from" class="mini-img center-row" src="{{ itemsProvider.itemImageUrl + items[rfmItem].image.full}}" (click)="openItemPage(items[rfmItem])"/>
+      <ion-col *ngFor="let frmItem of item.from" >
+        <img class="mini-img center-row" src="{{ itemsProvider.itemImageUrl + items[frmItem].image.full}}" (click)="openItemPage(items[frmItem])"/>
+      </ion-col>
     </ion-row>
   </ion-grid>
 

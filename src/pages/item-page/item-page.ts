@@ -14,6 +14,7 @@ export class ItemPage implements OnInit {
 
   item: any;
   items: any;
+  maxFromRows: number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public itemsProvider: LoLItemsProvider) {
     this.item = navParams.get('item');
