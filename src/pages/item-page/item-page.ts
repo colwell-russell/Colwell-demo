@@ -13,6 +13,7 @@ import { LoLItemsProvider } from '../../providers/LoLItemsProvider/LoLItemsProvi
 export class ItemPage implements OnInit {
 
   item: any;
+  itemMap: any = {};
   items: any;
   maxFromRows: number = 0;
 
@@ -21,10 +22,39 @@ export class ItemPage implements OnInit {
     this.items = navParams.get('items');
     console.log(this.item);
     console.log(this.items);
+    this._mapItem();
   }
 
   ngOnInit() {
 
+  }
+
+  _mapItem(){
+    // {
+    //   "row1":"1",
+    //   "row2":["2","3","4"],
+    //   "row3"[
+    //     "2":[],
+    //   "3":[],
+    //   "4":[]
+    // ],
+    //   "row4":[]
+    // }
+    if(this.item.from){
+      this.itemMap.row2 = this.item.from;
+
+      for(let x in this.item.from){
+
+        if(this.items[this.item.from[x]].from !== undefined){
+          if(this.itemMap.row3 === undefined){
+            this.itemMap.row3 = {};
+          }
+          this.itemMap.row3[this.item.from[x]] = this.items[this.item.from[x]].from;
+        }
+      }
+    }
+
+    console.log(this.itemMap);
   }
 
   openItemPage(item: string){
@@ -41,7 +71,6 @@ export class ItemPage implements OnInit {
       description = description.replace(/<br>/g, "\n");
     }
 
-    console.log(description);
     //Replace Tags
     if(description != undefined){
       description = description.replace(/<.+?>/g, "");
