@@ -20,8 +20,6 @@ export class ItemPage implements OnInit {
   constructor(public navCtrl: NavController, public navParams: NavParams, public itemsProvider: LoLItemsProvider) {
     this.item = navParams.get('item');
     this.items = navParams.get('items');
-    console.log(this.item);
-    console.log(this.items);
     this._mapItem();
   }
 
@@ -34,11 +32,7 @@ export class ItemPage implements OnInit {
     //   "row1":"1",
     //   "row2":["2","3","4"],
     //   "row3"[
-    //     "2":[],
-    //   "3":[],
-    //   "4":[]
-    // ],
-    //   "row4":[]
+    //     "2":[]
     // }
     if(this.item.from){
       this.itemMap.row2 = this.item.from;
@@ -53,8 +47,6 @@ export class ItemPage implements OnInit {
         }
       }
     }
-
-    console.log(this.itemMap);
   }
 
   openItemPage(item: string){

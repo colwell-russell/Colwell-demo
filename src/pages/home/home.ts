@@ -14,12 +14,17 @@ export class HomePage implements OnInit{
 
   champions: any
   championKeys: any;
+  championSearchText: string;
 
   constructor(public navCtrl: NavController, public championProvider: LoLChampionsProvider, public itemsProvider: LoLItemsProvider) {
 
   }
 
   ngOnInit(){
+    this.getChampions();
+  }
+
+  getChampions(){
     this.championProvider.getChampionData().subscribe(data => {
       this.champions = data['data'];
       this.championKeys = this.transform(this.champions);
@@ -39,5 +44,21 @@ export class HomePage implements OnInit{
       keys.push(key);
     }
     return keys;
+  }
+
+  filterChampionsByName(event: any){
+    if(this.championSearchText.length >= 3){
+      let tempChamps = {}
+      for(let champ  in this.champions){
+        if(this.champions[champ].name.includes(this.championSearchText)){
+          tempChamps[champ] = this.champions[champ];
+        }
+      }
+      this.champions = tempChamps;
+    }
+  }
+
+  resetChampions(){
+    this.getChampions();
   }
 }
