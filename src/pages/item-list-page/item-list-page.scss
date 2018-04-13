@@ -14,6 +14,9 @@ item-list-page {
     height: 100px;
     width: 100px;
     opacity: .9;
+    border-color: color($colors,secondary);
+    border-style: solid;
+    border-width: thick;
   }
 
   ion-list {
@@ -30,11 +33,17 @@ item-list-page {
   }
 
   ion-col .card-title {
-    top:65%;
+    top:40%;
     position: absolute;
     font-size: 1.0em;
-    width: 100%;
+    width: 80%;
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;
+    margin-left: 5px;
   }
 }

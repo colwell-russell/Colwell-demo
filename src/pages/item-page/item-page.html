@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>{{ item.name }}</ion-title>
   </ion-navbar>
 </ion-header>
@@ -43,7 +43,9 @@
     </ion-row>
     <ion-row *ngIf="itemMap.row3">
       <ion-col *ngFor="let itm2 of itemMap.row2">
-        <img *ngFor="let itm3 of itemMap.row3[itm2]" class="mini-img center-row" src="{{ itemsProvider.itemImageUrl + items[itm3].image.full}}" (click)="openItemPage(items[itm3])"/>
+        <div class="center-row">
+          <img *ngFor="let itm3 of itemMap.row3[itm2]" class="mini-img" src="{{ itemsProvider.itemImageUrl + items[itm3].image.full}}" (click)="openItemPage(items[itm3])"/>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>

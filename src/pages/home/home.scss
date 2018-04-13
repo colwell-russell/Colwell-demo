@@ -1,4 +1,6 @@
 page-home {
+
+
   ion-row {
     text-align: center;
   }
@@ -11,6 +13,9 @@ page-home {
   img {
     height: 100px;
     width: 100px;
+    border-color: color($colors,secondary);
+    border-style: solid;
+    border-width: thick;
   }
 
   ion-card {

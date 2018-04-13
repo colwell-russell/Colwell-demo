@@ -14,3 +14,47 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+ion-content, .content-md, .content-ios{
+  background-color: color($colors,dark);
+  color: color($colors,secondary);
+}
+
+.toolbar-background-md {
+  background-color: color($colors, primary);
+}
+.toolbar-title-md {
+  color: color($colors,secondary) !important;
+}
+
+ion-menu {
+  background-color: color($colors,primary) !important;
+  color: color($colors,secondary) !important;
+}
+
+.toolbar-md-primary .bar-button-clear-md,
+.toolbar-md-primary .bar-button-default-md,
+.toolbar-md-primary .bar-button-outline-md,
+.toolbar-md-primary .toolbar-title-md,
+.toolbar-ios-primary .toolbar-title-ios,
+.toolbar-ios-primary .bar-button-clear-ios,
+.toolbar-ios-primary .bar-button-default-ios{
+  color: color($colors,secondary);
+}
+
+ion-grid {
+  background-color: color($colors,dark);
+}
+
+ion-searchbar, .searchbar-ios, .searchbar-md {
+  background-color: color($colors,light);
+}
+
+ion-card, .card-ios, .card-header-ios, .card-md, .card-header-md {
+  background-color: color($colors, primary);
+  color: color($colors,secondary);
+}
+
+ion-item, .item-md, .item-ios {
+  background-color: color($colors,dark);
+  color: color($colors,secondary);
+}
