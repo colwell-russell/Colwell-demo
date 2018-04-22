@@ -21,11 +21,7 @@ $app-direction: ltr;
 // the Sass variables found in Ionic's source scss files.
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
-$background-ios-color: #002394;
-$background-md-color: #002394;
-$menu-ios-background: #002394;
-$menu-md-background: #002394;
-$menu-wp-background: #002394;
+
 
 // Named Color Variables
 // --------------------------------------------------
@@ -36,11 +32,11 @@ $menu-wp-background: #002394;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #002394,
-  secondary:  #FF9500,
+  primary:    #1070B6,
+  secondary:  #D19900,
   danger:     #f53d3d,
-  light:      #A3AFD9,
-  dark:       #394D8E
+  light:      #896400,
+  dark:       #3D2C00
 );
 
 // App iOS Variables

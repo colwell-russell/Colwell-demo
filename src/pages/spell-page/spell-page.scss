@@ -5,16 +5,7 @@ spell-page {
     width: 100px;
   }
 
-  ion-label {
-    margin-top: 0;
-    margin-bottom: 5px;
-  }
-
-  .label-md {
-    margin: 5px, 8px, 5px, 0px;
-  }
-
-  .label-ios {
+  ion-label,  .label-ios, .label-md {
     margin: 0px 0px 5px 0px;
   }
 

@@ -14,7 +14,7 @@
     [showCancelButton]="true"
     (ionCancel)="resetChampions()">
   </ion-searchbar>
-  <ion-grid *ngIf="champions" padding>
+  <ion-grid *ngIf="champions">
     <div *ngFor="let champ of championKeys | jsontoarray; index as i;">
     <ion-row *ngIf="(i + 1) % 3 == 0">
       <ion-col *ngIf="champions[championKeys[i]]" (click)="openChampionPage(champions[championKeys[i]])">

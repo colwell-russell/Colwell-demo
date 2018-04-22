@@ -6,13 +6,13 @@ page-home {
   }
 
   ion-col {
-    height: 125px;
     text-align: center;
+    padding: 0px 1px 0px 1px !important;
   }
 
   img {
-    height: 100px;
-    width: 100px;
+    height: 125px;
+    width: 125px;
     border-color: color($colors,secondary);
     border-style: solid;
     border-width: thick;

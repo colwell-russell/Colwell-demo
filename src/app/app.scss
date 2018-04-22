@@ -15,8 +15,7 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 ion-content, .content-md, .content-ios{
-  background-color: color($colors,dark);
-  color: color($colors,secondary);
+  color: color($colors,dark);
 }
 
 .toolbar-background-md {
@@ -41,12 +40,8 @@ ion-menu {
   color: color($colors,secondary);
 }
 
-ion-grid {
-  background-color: color($colors,dark);
-}
-
 ion-searchbar, .searchbar-ios, .searchbar-md {
-  background-color: color($colors,light);
+  background-color: color($colors,primary);
 }
 
 ion-card, .card-ios, .card-header-ios, .card-md, .card-header-md {
@@ -55,6 +50,5 @@ ion-card, .card-ios, .card-header-ios, .card-md, .card-header-md {
 }
 
 ion-item, .item-md, .item-ios {
-  background-color: color($colors,dark);
   color: color($colors,secondary);
 }
