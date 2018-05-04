@@ -3,6 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { BuildCreator } from '../pages/build-creator/build-creator';
 import { HomePage } from '../pages/home/home';
 import { ItemListPage } from '../pages/item-list-page/item-list-page';
 import { ListPage } from '../pages/list/list';
@@ -23,7 +24,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Champions', component: HomePage },
-      { title: 'Items', component: ItemListPage }
+      { title: 'Items', component: ItemListPage },
+      { title: 'Build Creator', component: BuildCreator }
     ];
 
   }

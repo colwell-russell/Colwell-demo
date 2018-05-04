@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
+import { BuildCreator } from '../pages/build-creator/build-creator';
 import { ChampionPage } from '../pages/champion-page/champion-page';
 import { HomePage } from '../pages/home/home';
 import { ItemListPage } from '../pages/item-list-page/item-list-page';
@@ -31,6 +32,7 @@ export function itemsProviderFactory(itemsProvider: LoLItemsProvider) {
 @NgModule({
   declarations: [
     MyApp,
+    BuildCreator,
     ChampionPage,
     HomePage,
     ItemListPage,
@@ -47,6 +49,7 @@ export function itemsProviderFactory(itemsProvider: LoLItemsProvider) {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    BuildCreator,
     ChampionPage,
     HomePage,
     ItemListPage,

@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Build Creator</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="champion-page">
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngIf="champion">
+        <img src="{{ championProvider.championImageUrl + champion.image.full}}"/>
+      </ion-col>
+      <ion-col>
+        <ion-select [(ngModel)]="champion">
+          <ion-option *ngFor="let champ of championKeys | jsontoarray; index as i;" value="{{champions[championKeys[i]]}}">{{ champions[championKeys[i]].name}} </ion-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="champion">
+      <ion-col *ngIf="champion.stats">
+        <ion-label>Armor: {{ champion.stats.armor}}</ion-label>
+        <ion-label>Attack Dmg: {{ champion.stats.attackdamage}}</ion-label>
+        <ion-label>Attack Spd: {{ champion.stats.attackspeedoffset}}</ion-label>
+        <ion-label>Crit: {{ champion.stats.crit}}</ion-label>
+        <ion-label>HP: {{ champion.stats.hp}}</ion-label>
+        <ion-label>HP Regen: {{ champion.stats.hpregen}}</ion-label>
+        <ion-label>MP: {{ champion.stats.mp}}</ion-label>
+        <ion-label>MP Regen: {{ champion.stats.mpregen}}</ion-label>
+        <ion-label>Spell Blk: {{ champion.stats.spellblock}}</ion-label>
+      </ion-col>
+      <ion-col *ngIf="champion.stats">
+        <ion-label>Armor per Level: {{ champion.stats.armorperlevel}} </ion-label>
+        <ion-label>Attack Dmg per Level: {{ champion.stats.attackdamageperlevel}}</ion-label>
+        <ion-label>Attack Spd per Level: {{ champion.stats.attackspeedperlevel}}</ion-label>
+        <ion-label>Crit per Level: {{ champion.stats.critperlevel}}</ion-label>
+        <ion-label>HP per Level: {{ champion.stats.hpperlevel}}</ion-label>
+        <ion-label>HP Regen per Level: {{ champion.stats.hpregenperlevel}}</ion-label>
+        <ion-label>MP per Level: {{ champion.stats.mpperlevel}}</ion-label>
+        <ion-label>MP Regen per Level: {{ champion.stats.mpregenperlevel}}</ion-label>
+        <ion-label>Spell Blk per Level: {{ champion.stats.spellblockperlevel}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      ITEMS HERE
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
