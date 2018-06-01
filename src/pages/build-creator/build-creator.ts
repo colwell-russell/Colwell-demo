@@ -16,6 +16,7 @@ export class BuildCreator implements OnInit{
   champions: any
   championKeys: any;
   champion: any;
+  championImgSrc:string;
 
   constructor(public navCtrl: NavController, public championProvider: LoLChampionsProvider, public itemsProvider: LoLItemsProvider) {
 
@@ -29,7 +30,14 @@ export class BuildCreator implements OnInit{
     this.championProvider.getChampionData().subscribe(data => {
       this.champions = data['data'];
       this.championKeys = this.transform(this.champions);
+      this.champion = this.champions[Object.keys(this.champions)[0]];
+      this.championImgSrc = this.championProvider.championImageUrl + this.champion.image.full;
     });
+  }
+
+  champChange(newValue){
+    this.champion = newValue;
+    this.championImgSrc = this.championProvider.championImageUrl + newValue.image.full;
   }
 
   transform(value): any {
